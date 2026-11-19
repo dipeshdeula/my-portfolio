@@ -1,130 +1,199 @@
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Cpu, Gauge, GitBranch, ShieldCheck } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import me from "@/assets/images/me.png";
-import { githubLink, linkedinLink,facebookLink } from "@/constant/socialLink";
+import heroImg from "@/assets/images/hero.png";
+import { githubLink, linkedinLink } from "@/constant/socialLink";
+
+const coreStack = [
+  "ASP.NET Core",
+  "Django",
+  "React.js",
+  "TypeScript",
+  "PostgreSQL",
+];
+
+
 const Hero = () => {
-    return(
-        <section
-           id="top"
-            className="relative overflow-hidden pt-36 pb-28 md:pt-44 md:pb-32"
-        >
-           {/* Dotted grid backdrop + animated shine */}
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-90" aria-hidden />
-      <div className="bg-grid-shine" aria-hidden />
+  return (
+    <section
+      id="top"
+      aria-label="Introduction"
+      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-[#0B0F19] pt-20 text-white sm:pt-24 lg:pt-28"
+    >
+      {/* =====================================================================
+          1. DESKTOP FULL-BLEED WORKSPACE BACKDROP (lg and above)
+             Left side keeps Dipesh crystal clear; Right side has high-contrast
+             directional slate gradient for razor-sharp typography.
+         ===================================================================== */}
+      <div className="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden>
+        <img
+          src={heroImg}
+          alt=""
+          className="h-full w-full object-cover object-[18%_center] xl:object-[22%_center]"
+          loading="eager"
+          fetchPriority="high"
+        />
 
-      <div className="container relative">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-16">
-          {/* Left: Framed portrait */}
-          <div className="hero-morph order-2 lg:order-1 lg:col-span-5">
-            <div className="relative mx-auto w-full max-w-[420px]">
-              {/* Outer hairline frame */}
-              <div className="relative rounded-[14px] border border-border/80 bg-surface/40 p-2.5 shadow-elevated backdrop-blur-sm">
-                {/* Inner image frame */}
-                <div className="relative overflow-hidden rounded-[8px] border border-border/60">
-                  <div className="aspect-[4/5] w-full">
-                    <img
-                      src={me}
-                      alt="Workspace — laptop with code on a clean desk"
-                      className="h-full w-full object-cover grayscale-[15%] contrast-[1.02]"
-                      loading="eager"
-                    />
-                  </div>
-                  {/* Subtle vignette for depth */}
-                  <div
-                    className="pointer-events-none absolute inset-0"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, hsl(var(--background) / 0) 55%, hsl(var(--background) / 0.55) 100%)",
-                    }}
-                    aria-hidden
-                  />
-                  {/* Caption pill */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] uppercase tracking-[0.18em]">
-                    <span className="rounded-full border border-border/70 bg-background/70 px-2.5 py-1 text-muted-foreground backdrop-blur-md">
-                      Currently · Building
-                    </span>
-                    <span className="rounded-full border border-border/70 bg-background/70 px-2.5 py-1 text-muted-foreground backdrop-blur-md">
-                      v · 2026
-                    </span>
-                  </div>
-                </div>
+        {/* Directional horizontal gradient: clear portrait on left -> rich dark slate on right */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(11, 15, 25, 0.08) 0%, rgba(11, 15, 25, 0.22) 34%, rgba(11, 15, 25, 0.84) 51%, rgba(11, 15, 25, 0.96) 68%, rgba(11, 15, 25, 0.99) 100%)",
+          }}
+        />
+
+        {/* Top & bottom cinematic vignette */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(11, 15, 25, 0.55) 0%, transparent 18%, transparent 76%, rgba(11, 15, 25, 0.88) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Subtle ambient glow on mobile/tablet background */}
+      <div
+        className="pointer-events-none absolute inset-0 lg:hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse 90% 50% at 50% 0%, rgba(249, 115, 22, 0.14), transparent 70%)",
+        }}
+        aria-hidden
+      />
+
+      {/* =====================================================================
+          2. MAIN HERO CONTENT (Responsive across Mobile, Tablet, Laptop & 4K)
+         ===================================================================== */}
+      <div className="container relative z-10 my-auto py-6 sm:py-10 lg:py-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-8">
+          {/* Mobile & Tablet Dedicated Portrait Stage (< lg)
+              Prevents text from overlapping Dipesh's face on smaller screens */}
+          <div className="hero-morph lg:hidden">
+            <div className="relative mx-auto max-w-[540px] overflow-hidden rounded-2xl border border-white/15 bg-slate-900/60 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+              <div className="aspect-[16/10] w-full overflow-hidden sm:aspect-[16/9]">
+                <img
+                  src={heroImg}
+                  alt="Dipesh Deula at engineering workstation"
+                  className="h-full w-full object-cover object-[24%_22%]"
+                  loading="eager"
+                />
               </div>
-
-              {/* Decorative corner ticks */}
-              <span className="pointer-events-none absolute -left-1.5 -top-1.5 h-3 w-3 border-l border-t border-foreground/40" aria-hidden />
-              <span className="pointer-events-none absolute -right-1.5 -top-1.5 h-3 w-3 border-r border-t border-foreground/40" aria-hidden />
-              <span className="pointer-events-none absolute -bottom-1.5 -left-1.5 h-3 w-3 border-b border-l border-foreground/40" aria-hidden />
-              <span className="pointer-events-none absolute -bottom-1.5 -right-1.5 h-3 w-3 border-b border-r border-foreground/40" aria-hidden />
+              {/* Smooth bottom gradient blend */}
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 55%, rgba(11, 15, 25, 0.85) 100%)",
+                }}
+                aria-hidden
+              />
+              {/* Compact overlay badge on mobile image */}
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                <span className="rounded-lg border border-white/15 bg-slate-950/70 px-3 py-1 font-mono text-[11px] font-medium text-white backdrop-blur-md">
+                  Dipesh Deula
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-slate-950/75 px-2.5 py-1 font-mono text-[10.5px] font-medium text-emerald-300 backdrop-blur-md">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  Available
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Right: Headline + CTAs */}
-          <div className="order-1 lg:order-2 lg:col-span-7">
+          {/* Right Column: Typography, Stack Badges & CTAs */}
+          <div className="mx-auto w-full max-w-[560px] lg:col-span-7 lg:col-start-6 lg:mx-0 lg:max-w-none xl:col-span-6 xl:col-start-7">
             {/* Eyebrow */}
-            <div className="hero-morph flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground/80">
-              <span className="h-px w-8 bg-border" />
-              Portfolio · 2026
+            <div className="hero-morph flex items-center gap-3 font-mono text-[10.5px] font-semibold uppercase tracking-[0.2em] text-primary sm:text-[11.5px]">
+              <span className="h-[1.5px] w-6 bg-primary sm:w-8" />
+              <span>FULL-STACK SOFTWARE ENGINEER</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="hero-morph hero-morph-1 mt-7 max-w-[18ch] text-balance text-[2.4rem] font-semibold leading-[1.04] tracking-tightest text-foreground sm:text-[3rem] md:text-[3.6rem] lg:text-[4.2rem]">
-              Full-stack developer building{" "}
-              <span className="font-serif italic font-normal text-foreground">considered</span>{" "}
-              software.
+            {/* 3-Line Headline */}
+            <h1 className="hero-morph hero-morph-1 mt-4 text-[2.15rem] font-extrabold leading-[1.08] tracking-tight text-white sm:mt-5 sm:text-[3.1rem] md:text-[3.5rem] lg:text-[3.45rem] xl:text-[4.5rem]">
+              <span className="block">Building reliable <span className="text-primary">Software, </span> from <span className="block lg:text-[3.5rem]">backend to frontend.</span></span>
+              {/* <span className="block">
+                <span className="text-[#F97316]">products</span> &amp; reliable
+              </span>
+              <span className="block">web systems.</span> */}
             </h1>
+            {/* Building reliable software, from backend to frontend. */}
 
-            {/* Single supporting line */}
-            <p className="hero-morph hero-morph-2 mt-6 max-w-[52ch] text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              I'm <span className="text-foreground">Dipesh Deula</span> — a software engineer
-              working across the stack with a focus on clean architecture and product craft.
+            {/* Supporting Bio */}
+            <p className="hero-morph hero-morph-2 mt-4 max-w-[52ch] text-[14.5px] leading-[1.68] text-slate-200/95 sm:mt-5 sm:text-[16px]">
+              I'm <strong className="font-semibold text-white">Dipesh Deula</strong>. I build full-stack applications, design scalable backend systems, and turn complex requirements into practical software solutions.
             </p>
 
-            {/* CTAs */}
-            <div className="hero-morph hero-morph-3 mt-9 flex flex-wrap items-center gap-3">
-              <Button asChild variant="primary" size="lg">
-                <a href="#projects">
-                  View selected work
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="subtle" size="lg">
-                <a href="#contact">Contact me</a>
-              </Button>
+            {/* Translucent Pill Badges for Tech Stack */}
+            <div className="hero-morph hero-morph-2 mt-5 flex flex-wrap items-center gap-1.5 sm:mt-6 sm:gap-2">
+              {coreStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-lg border border-white/15 bg-white/[0.06] px-2.5 py-1 font-mono text-[11px] font-medium text-slate-100 backdrop-blur-md transition-colors duration-200 hover:border-[#F97316]/55 hover:bg-white/[0.12] sm:px-3 sm:text-[12px]"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
 
-            {/* Trust links */}
-            <div className="hero-morph hero-morph-4 mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[13px] text-muted-foreground">
+            {/* Responsive Action Buttons (Side-by-side 2-col on mobile, inline on sm+) */}
+            <div className="hero-morph hero-morph-3 mt-7 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
+              <a
+                href="#projects"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-[13.5px] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(249,115,22,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#EA580C] sm:h-12 sm:px-6 sm:text-[14.5px]"
+              >
+                <span>Featured Work</span>
+                <ArrowUpRight className="h-4 w-4 shrink-0" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex h-11 items-center justify-center rounded-xl border border-white/25 bg-slate-900/45 px-4 text-[13.5px] font-semibold text-white backdrop-blur-md transition-all duration-200 hover:border-white/45 hover:bg-white/[0.1] sm:h-12 sm:px-6 sm:text-[14.5px]"
+              >
+                Let's Connect
+              </a>
+            </div>
+
+            {/* Bottom Social & Availability Row */}
+            <div className="hero-morph hero-morph-4 mt-7 flex flex-wrap items-center gap-x-5 gap-y-2.5 border-t border-white/15 pt-5 text-[12.5px] font-medium text-slate-200 sm:mt-8 sm:gap-x-6 sm:text-[13px]">
               <a
                 href={githubLink}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="group inline-flex items-center gap-2 transition-colors hover:text-foreground"
+                className="group inline-flex items-center gap-1.5 transition-colors hover:text-white"
               >
-                <FaGithub className="h-3.5 w-3.5" aria-hidden /> GitHub
-                <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                <FaGithub className="h-4 w-4 text-white" aria-hidden />
+                <span>GitHub</span>
+                <ArrowUpRight className="h-3.5 w-3.5 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#F97316]" />
               </a>
-              <span className="h-3 w-px bg-border" aria-hidden />
+
+              <span className="h-3.5 w-px bg-white/20" aria-hidden />
+
               <a
                 href={linkedinLink}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="group inline-flex items-center gap-2 transition-colors hover:text-foreground"
+                className="group inline-flex items-center gap-1.5 transition-colors hover:text-white"
               >
-                <FaLinkedinIn className="h-3.5 w-3.5" aria-hidden /> LinkedIn
-                <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                <FaLinkedinIn className="h-4 w-4 text-white" aria-hidden />
+                <span>LinkedIn</span>
+                <ArrowUpRight className="h-3.5 w-3.5 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#F97316]" />
               </a>
-              <span className="h-3 w-px bg-border" aria-hidden />
-              <span className="inline-flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-success" />
-                Open to roles
+
+              <span className="h-3.5 w-px bg-white/20" aria-hidden />
+
+              <span className="inline-flex items-center gap-2 text-slate-100">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                <span>Open for New Role</span>
               </span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    )
-}
+  );
+};
 
-  export default Hero;
+export default Hero;

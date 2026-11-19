@@ -1,119 +1,108 @@
-import { ArrowUpRight, Mail } from "lucide-react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
+import { githubLink, linkedinLink, whatsappLink } from "@/constant/socialLink";
+import discussionImg from "@/assets/images/discussion.png";
 
 const Contact = () => {
   return (
     <section id="contact" className="relative py-24 md:py-32">
       <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-50" aria-hidden />
       <div className="container relative">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground/80">
-              <span className="text-foreground/60">05</span>
-              <span className="h-px w-6 bg-border" />
-              Contact
-            </div>
-            <h2 className="mt-5 text-balance text-[2rem] font-semibold leading-[1.08] tracking-tightest text-foreground sm:text-[2.5rem] md:text-[3rem]">
-              Have a project in mind, or a role I should know about?{" "}
-              <span className="font-serif italic font-normal text-muted-foreground">
-                Let's talk.
-              </span>
-            </h2>
-            <p className="mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground">
-              I'm open to full-time roles, contract engagements, and interesting collaborations.
-              Email is the fastest way to reach me — I usually reply within a day.
-            </p>
-
-            <a
-              href="mailto:hello@dipeshdeula.dev"
-              className="group mt-10 inline-flex items-center gap-3 text-[1.5rem] font-medium tracking-tight text-foreground transition-colors hover:text-primary sm:text-[1.85rem]"
-            >
-              hello@dipeshdeula.dev
-              <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+        {/* Full-bleed Collaboration Image Background with Centered Content */}
+        <div className="relative overflow-hidden rounded-3xl border border-border shadow-elevated">
+          {/* Background Image (discussion.png) */}
+          <div className="absolute inset-0">
+            <img
+              src={discussionImg}
+              alt="Dipesh Deula collaborating on software engineering projects"
+              className="h-full w-full object-cover object-center"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/50 to-slate-950/65" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/25 via-transparent to-accent/20" />
           </div>
 
-          <aside className="lg:col-span-5">
-            {/* Framed supporting image */}
-            <div className="relative mb-8 rounded-[12px] border border-border/80 bg-surface/40 p-2 shadow-soft">
-              <div className="relative overflow-hidden rounded-[6px] border border-border/60">
-                <div className="aspect-[16/9] w-full">
-                  <img
-                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80"
-                    alt="Colorful code on a dark monitor — engineering workspace"
-                    className="h-full w-full object-cover grayscale-[10%] contrast-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, hsl(var(--background) / 0) 55%, hsl(var(--background) / 0.55) 100%)",
-                  }}
-                  aria-hidden
-                />
-              </div>
-              <span className="pointer-events-none absolute -left-1 -top-1 h-2.5 w-2.5 border-l border-t border-foreground/40" aria-hidden />
-              <span className="pointer-events-none absolute -right-1 -top-1 h-2.5 w-2.5 border-r border-t border-foreground/40" aria-hidden />
-              <span className="pointer-events-none absolute -bottom-1 -left-1 h-2.5 w-2.5 border-b border-l border-foreground/40" aria-hidden />
-              <span className="pointer-events-none absolute -bottom-1 -right-1 h-2.5 w-2.5 border-b border-r border-foreground/40" aria-hidden />
+          {/* Centered Content */}
+          <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 py-16 text-center sm:px-10 md:py-24">
+            {/* Clean Eyebrow */}
+            <div className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-6 bg-primary" />
+              <span>Collaboration & Roles</span>
+              <span className="h-px w-6 bg-primary" />
             </div>
 
-            <div className="flex flex-col divide-y divide-border border-y border-border">
-              <a
-                href="mailto:hello@dipeshdeula.dev"
-                className="group flex items-center justify-between gap-4 py-5 transition-colors hover:text-primary"
-              >
-                <span className="inline-flex items-center gap-3 text-[14px] text-foreground">
-                  <Mail className="h-4 w-4 text-muted-foreground" />
-                  Email
-                </span>
-                <span className="inline-flex items-center gap-2 text-[13px] text-muted-foreground transition-colors group-hover:text-primary">
-                  hello@dipeshdeula.dev
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </a>
-              <a
-                href="https://github.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="group flex items-center justify-between gap-4 py-5 transition-colors hover:text-foreground"
-              >
-                <span className="inline-flex items-center gap-3 text-[14px] text-foreground">
-                  <FaGithub className="h-4 w-4 text-muted-foreground" aria-hidden />
-                  GitHub
-                </span>
-                <span className="inline-flex items-center gap-2 text-[13px] text-muted-foreground transition-colors group-hover:text-foreground">
-                  @dipeshdeula
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </a>
-              <a
-                href="https://linkedin.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="group flex items-center justify-between gap-4 py-5 transition-colors hover:text-foreground"
-              >
-                <span className="inline-flex items-center gap-3 text-[14px] text-foreground">
-                  <FaLinkedinIn className="h-4 w-4 text-muted-foreground" aria-hidden />
-                  LinkedIn
-                </span>
-                <span className="inline-flex items-center gap-2 text-[13px] text-muted-foreground transition-colors group-hover:text-foreground">
-                  in/dipeshdeula
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </a>
-            </div>
-
-            <div className="mt-8 flex items-center gap-2 text-[12px] text-muted-foreground">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70 opacity-60" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
+            {/* Centered Headline */}
+            <h2 className="mt-5 text-balance text-[2rem] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[2.65rem] md:text-[3.15rem]">
+              Have a great project idea or role?{" "}<br/>
+              <span className="bg-primary bg-clip-text text-transparent">
+                Let's work together.
               </span>
-              Currently available · Replies within 24h
+            </h2>
+
+            <p className="mt-4 max-w-xl text-pretty text-[15.5px] leading-relaxed text-white/85 sm:text-[16.5px]">
+              Actively seeking full-time software engineering roles, project lead developer
+              opportunities, and product collaborations.
+            </p>
+
+            {/* Primary Centered CTAs (No phone number displayed in text) */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="mailto:deulatech@gmail.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="group inline-flex items-center gap-3 rounded-xl bg-primary px-6 py-3.5 text-[14.5px] font-semibold text-primary-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-primary-hover"
+              >
+                <Mail className="h-4 w-4" />
+                hello@dipeshdeula.dev
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="group inline-flex items-center gap-2.5 rounded-xl bg-[#16a34a] px-6 py-3.5 text-[14.5px] font-semibold text-white shadow-elevated transition-all hover:scale-[1.02] hover:bg-[#15803d]"
+              >
+                <FaWhatsapp className="h-4 w-4" />
+                <span>Chat on WhatsApp</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </div>
-          </aside>
+
+            {/* Clean Unboxed Direct Links */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/15 pt-7 text-[13px] font-medium text-white/85">
+              <a
+                href={githubLink}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+              >
+                <FaGithub className="h-4 w-4 text-primary" aria-hidden />
+                <span>@dipeshdeula</span>
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-75" />
+              </a>
+
+              <span className="h-3.5 w-px bg-white/20" aria-hidden />
+
+              <a
+                href={linkedinLink}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+              >
+                <FaLinkedinIn className="h-4 w-4 text-primary" aria-hidden />
+                <span>in/dipeshdeula</span>
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-75" />
+              </a>
+
+              <span className="h-3.5 w-px bg-white/20" aria-hidden />
+
+              <div className="inline-flex items-center gap-2 text-white/85">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span>Hetauda, Nepal · Remote</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

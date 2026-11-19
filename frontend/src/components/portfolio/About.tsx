@@ -1,89 +1,65 @@
 import SectionHeading from "./SectionHeading";
 import aboutme from "@/assets/images/aboutme.png";
+import { ArrowUpRight } from "lucide-react";
 
 const facts = [
-  { label: "Location", value: "Nepal · Remote" },
-  { label: "Focus", value: "Full-stack platforms" },
-  { label: "Stack", value: "ASP.NET Core · TS · React.js" },
-  { label: "Status", value: "Open to roles" },
+  { label: "Location", value: "Hetauda, Nepal · Remote" },
+  { label: "Recent Role", value: "Project Lead Developer (2025–2026)" },
+  { label: "Stack", value: "ASP.NET Core · React · TypeScript" },
+  { label: "Status", value: "Open for New Role" },
 ];
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section id="about" className="py-20 md:py-28">
       <div className="container">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-6">
             <SectionHeading
-              number="01"
               eyebrow="About"
-              title="A developer who cares about the details that survive a year in production."
+              title="Clean architecture, fast interfaces, and dependable delivery."
             />
-            <div className="mt-9 space-y-5 text-[15px] leading-[1.75] text-muted-foreground">
-              <p>
-                I build web applications end to end — from data models and APIs to the polish on the
-                final pixel. My work tends to live between product and engineering: I like
-                understanding the problem, shaping a calm interface around it, and making the system
-                behind it predictable.
-              </p>
-              <p>
-                I value clean architecture, thoughtful state management, and code that the next
-                person can read without a guided tour. I'm equally comfortable wiring up backend
-                services, designing component systems, or tightening performance until things feel
-                quietly fast.
-              </p>
-              <p className="text-foreground/90">
-                Outside of features, I care about reliability, accessibility, and shipping work I'm
-                proud to put my name on.
-              </p>
-            </div>
+            <p className="mt-6 text-[15.5px] leading-[1.75] text-muted-foreground">
+              I build web platforms end-to-end — from database schemas and high-throughput APIs to
+              responsive React interfaces. Recently served as{" "}
+              <strong className="font-semibold text-foreground">
+                Project Lead Developer at Seckout (2025–2026)
+              </strong>
+              , powering checkout and rewards across 1,000+ partner merchants, and now ready for my
+              next engineering role.
+            </p>
+
+            {/* Clean Hairline Divided List (No chipped boxes) */}
+            <dl className="mt-8 divide-y divide-border border-y border-border">
+              {facts.map(({ label, value }) => (
+                <div key={label} className="flex items-center justify-between gap-6 py-3.5">
+                  <dt className="text-[13px] text-muted-foreground">{label}</dt>
+                  <dd className="text-[13.5px] font-semibold text-foreground">{value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <a
+              href="#contact"
+              className="mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-primary transition-colors hover:text-primary-hover"
+            >
+              Get in touch
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
 
-          <aside className="lg:col-span-4">
-            <div className="lg:sticky lg:top-24">
-              {/* Framed supporting image */}
-              <div className="relative mb-8 rounded-[12px] border border-border/80 bg-surface/40 p-2 shadow-soft">
-                <div className="relative overflow-hidden rounded-[6px] border border-border/60">
-                  <div className="aspect-[4/3] w-full">
-                    <img
-                      src={aboutme}
-                      alt="Macro of a circuit board — engineering craft"
-                      className="h-full w-full object-cover grayscale-[20%] contrast-[1.03]"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div
-                    className="pointer-events-none absolute inset-0"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, hsl(var(--background) / 0) 60%, hsl(var(--background) / 0.5) 100%)",
-                    }}
-                    aria-hidden
+          <aside className="lg:col-span-6">
+            <div className="overflow-hidden rounded-2xl  shadow-elevated">
+              <div className="overflow-hidden rounded-xl border border-border/80 bg-surface">
+                <div className="aspect-[16/10.5] w-full">
+                  <img
+                    src={aboutme}
+                    alt="Engineering architecture and development workflow"
+                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                    loading="lazy"
                   />
                 </div>
-                <span className="pointer-events-none absolute -left-1 -top-1 h-2.5 w-2.5 border-l border-t border-foreground/40" aria-hidden />
-                <span className="pointer-events-none absolute -right-1 -top-1 h-2.5 w-2.5 border-r border-t border-foreground/40" aria-hidden />
-                <span className="pointer-events-none absolute -bottom-1 -left-1 h-2.5 w-2.5 border-b border-l border-foreground/40" aria-hidden />
-                <span className="pointer-events-none absolute -bottom-1 -right-1 h-2.5 w-2.5 border-b border-r border-foreground/40" aria-hidden />
               </div>
-
-              <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/70">
-                Quick facts
-              </div>
-              <dl className="mt-5 divide-y divide-border border-y border-border">
-                {facts.map(({ label, value }) => (
-                  <div key={label} className="flex items-center justify-between gap-6 py-3.5">
-                    <dt className="text-[13px] text-muted-foreground">{label}</dt>
-                    <dd className="text-[13px] text-foreground">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <a
-                href="#contact"
-                className="mt-6 inline-flex items-center gap-1.5 text-[13px] text-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                Reach out for the long version →
-              </a>
             </div>
           </aside>
         </div>

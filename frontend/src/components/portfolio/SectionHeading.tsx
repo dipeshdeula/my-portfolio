@@ -6,20 +6,19 @@ interface Props {
   number?: string;
 }
 
-const SectionHeading = ({ eyebrow, title, description, align = "left", number }: Props) => {
+const SectionHeading = ({ eyebrow, title, description, align = "left" }: Props) => {
   const isCenter = align === "center";
   return (
     <div className={isCenter ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <div
-        className={`inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground/80 ${
+        className={`inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary ${
           isCenter ? "justify-center" : ""
         }`}
       >
-        {number && <span className="text-foreground/60">{number}</span>}
-        <span className="h-px w-6 bg-border" />
-        {eyebrow}
+        <span className="h-px w-6 bg-primary/60" />
+        <span>{eyebrow}</span>
       </div>
-      <h2 className="mt-5 text-balance text-[1.85rem] font-semibold leading-[1.1] tracking-tightest text-foreground sm:text-[2.25rem] md:text-[2.5rem]">
+      <h2 className="mt-4 text-balance text-[1.9rem] font-semibold leading-[1.12] tracking-tight text-foreground sm:text-[2.3rem] md:text-[2.55rem]">
         {title}
       </h2>
       {description && (
