@@ -11,7 +11,8 @@ import { FaGithub } from "react-icons/fa6";
 import seckoutwebImg from "@/assets/images/projects/seckoutweb.png";
 import seckoutadminImg from "@/assets/images/projects/seckoutadmin.png";
 import ghrmsImg from "@/assets/images/projects/ghrms.png";
-import navoaiImg from "@/assets/images/projects/navoai.png"
+import navoaiImg from "@/assets/images/projects/navoai.png";
+import gallaImg from "@/assets/images/projects/laxmi-galla-bhandar.png";
 import { githubLink } from "@/constant/socialLink";
 
 interface Project {
@@ -31,6 +32,46 @@ interface Project {
 const projects: Project[] = [
   {
     index: "01",
+    tag: "G-HRMS",
+    year: "2026",
+    title: "Government Human Resource Management System",
+    summary:
+      "A centralized human resource management platform designed to digitize government employee administration, organizational management, attendance, leave, payroll, transfers, promotions and employee records.",
+    role: "Full-Stack Developer · Cloud Infrastructure",
+    stack: [
+      "Python/Django",
+      "PostgreSQL",
+      "React/Typescript",
+      "AWS",
+      "REST API",
+    ],
+    image: ghrmsImg,
+    liveUrl: "http://3.109.215.70/",
+    repoUrl: githubLink,
+  },
+  {
+    index: "02",
+    tag: "Galla Laxmi Bhandar",
+    year: "2025",
+    title: "Accounting, Billing & Inventory Management System",
+    summary:
+      "A comprehensive business management solution designed to streamline accounting, billing, inventory, sales, purchases and everyday business operations through a unified platform",
+    role: "Full-Stack Developer · Cloud Infrastructure",
+    stack: [
+      "ASP.NET CORE",
+      "PostgreSQL",
+      "React/Typescript",
+      "TailwindCss",
+      "Shadcn UI",
+      "AWS",
+      "REST API",
+    ],
+    image: gallaImg,
+    liveUrl: "https://galla-laxmi-bhandar.vercel.app/",
+    repoUrl: githubLink,
+  },
+  {
+    index: "03",
     tag: "FinTech & Commerce",
     year: "2025–2026",
     title: "Seckout Rewards Platform",
@@ -38,17 +79,12 @@ const projects: Project[] = [
       "Nepal's first rewards-driven checkout platform connecting shoppers with 1,000+ partner vendors.",
     role: "Project Lead Developer · Architecture, API & UI",
     stack: ["React.js", "TypeScript", "Spring Boot", "MySQL", "Tailwind CSS"],
-    // metrics: [
-    //   { label: "Page Load", value: "-62%" },
-    //   { label: "Checkout", value: "+18%" },
-    //   { label: "Vendors", value: "1,000+" },
-    // ],
     image: seckoutwebImg,
     liveUrl: "https://www.seckout.com",
     repoUrl: githubLink,
   },
   {
-    index: "02",
+    index: "04",
     tag: "Internal Product",
     year: "2025",
     title: "Seckout Admin Console",
@@ -62,65 +98,26 @@ const projects: Project[] = [
       "TanStack Query",
       "Tailwind CSS",
     ],
-    // metrics: [
-    //   { label: "Manual Ops", value: "-40%" },
-    //   { label: "Auditing", value: "Real-Time" },
-    //   { label: "Security", value: "RBAC" },
-    // ],
     image: seckoutadminImg,
     liveUrl: "https://www.seckout.com",
     repoUrl: githubLink,
   },
   {
-    index: "03",
-    tag: "G-HRMS",
+    index: "05",
+    tag: "NAVO A.I",
     year: "2026",
-    title: "Goverment Human Resource Management System.",
+    title: "AI-Powered Teacher Copilot & Learning Platform",
     summary:
-      "A centralized human resource management platform designed to digitize government employee administration, organizational management, attendance, leave, payroll, transfers, promotions and employee records.",
+      "An AI-powered educational platform developed during a hackathon, designed to support students in their learning journey through intelligent assistance and AI-driven educational experiences",
     role: "Full-Stack Developer · Cloud Infrastructure",
-    stack: [
-      "Python/Django",
-      "PostgreSQL",
-      "React/Typescript",
-      "AWS",
-      "REST API",
-    ],
-    // metrics: [
-    //   { label: "p95 Latency", value: "<120ms" },
-    //   { label: "Tenants", value: "30+" },
-    //   { label: "Uptime", value: "99.9%" },
-    // ],
-    image: ghrmsImg,
-    liveUrl: "http://3.109.215.70/",
+    stack: ["React/Typescript", "GCP", "Supabase"],
+    image: navoaiImg,
+    liveUrl: "https://navoai-lovat.vercel.app/",
     repoUrl: githubLink,
   },
+
   // {
-  //   index: "04",
-  //   tag: "Lekha Nova",
-  //   year: "2025",
-  //   title: "Accounting, Billing & Inventory Management System",
-  //   summary:
-  //     "A comprehensive business management solution evolved from Laxmi Galla Bhandar, designed to streamline accounting, billing, inventory, sales, purchases and everyday business operations through a unified platform",
-  //   role: "Full-Stack Developer · Cloud Infrastructure",
-  //   stack: [
-  //     "ASP.NET CORE",
-  //     "PostgreSQL",
-  //     "React/Typescript",
-  //     "AWS",
-  //     "REST API",
-  //   ],
-  //   // metrics: [
-  //   //   { label: "p95 Latency", value: "<120ms" },
-  //   //   { label: "Tenants", value: "30+" },
-  //   //   { label: "Uptime", value: "99.9%" },
-  //   // ],
-  //   image: ghrmsImg,
-  //   liveUrl: githubLink,
-  //   repoUrl: githubLink,
-  // },
-  // {
-  //   index: "05",
+  //   index: "06",
   //   tag: "Kina Now",
   //   year: "2026",
   //   title: "Multi-Vendor E-commerce Platform",
@@ -144,24 +141,6 @@ const projects: Project[] = [
   //   repoUrl: githubLink,
   // },
 
-  {
-    index: "06",
-    tag: "NAVO A.I",
-    year: "2026",
-    title: "AI-Powered Teacher Copilot & Learning Platform",
-    summary:
-      "An AI-powered educational platform developed during a hackathon, designed to support students in their learning journey through intelligent assistance and AI-driven educational experiences",
-    role: "Full-Stack Developer · Cloud Infrastructure",
-    stack: ["React/Typescript", "GCP", "Supabase"],
-    // metrics: [
-    //   { label: "p95 Latency", value: "<120ms" },
-    //   { label: "Tenants", value: "30+" },
-    //   { label: "Uptime", value: "99.9%" },
-    // ],
-    image: navoaiImg,
-    liveUrl: "https://navoai-lovat.vercel.app/",
-    repoUrl: githubLink,
-  },
   // {
   //   index: "07",
   //   tag: "Library Management System",
@@ -217,6 +196,7 @@ const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [viewMode, setViewMode] = useState<"featured" | "grid">("featured");
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   const total = projects.length;
 
@@ -386,7 +366,7 @@ const Projects = () => {
                 })}
               </svg>
 
-              <div className="flex flex-wrap items-center justify-center gap-2">
+              {/* <div className="no-scrollbar -mx-2 flex flex-nowrap items-center gap-2 overflow-x-auto px-2 pb-1 md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0">
                 {projects.map((proj, idx) => {
                   const isActive = idx === activeIndex;
                   return (
@@ -394,7 +374,7 @@ const Projects = () => {
                       key={proj.title}
                       type="button"
                       onClick={() => setActiveIndex(idx)}
-                      className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[12.5px] font-semibold transition-all duration-300 ${
+                      className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3.5 py-1.5 text-[12px] font-semibold transition-all duration-300 md:px-4 md:text-[12.5px] ${
                         isActive
                           ? "-translate-y-0.5 border-primary bg-primary text-primary-foreground shadow-glow"
                           : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -407,13 +387,23 @@ const Projects = () => {
                     </button>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
 
-            {/* 3D Curved Product Showcase (Auto-height responsive on all devices) */}
+            {/* 3D Curved Product Showcase (Touch swipe + Auto-height responsive on all devices) */}
             <div
-              className="relative mt-7 w-full"
+              className="relative mt-7 w-full touch-pan-y"
               style={{ perspective: "1600px" }}
+              onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
+              onTouchEnd={(e) => {
+                if (touchStartX === null) return;
+                const delta = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(delta) > 45) {
+                  if (delta < 0) goNext();
+                  else goPrev();
+                }
+                setTouchStartX(null);
+              }}
             >
               {projects.map((project, idx) => {
                 const offset = getRelativeOffset(idx);
@@ -437,6 +427,8 @@ const Projects = () => {
                     aria-hidden={!isActive}
                     style={{
                       transform: `translate3d(${translateX}%, ${translateY}px, ${translateZ}px) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`,
+                      willChange:
+                        isActive || isNeighbor ? "transform, opacity" : "auto",
                       transition:
                         "transform 820ms cubic-bezier(0.22, 1, 0.36, 1), opacity 650ms cubic-bezier(0.22, 1, 0.36, 1), filter 650ms cubic-bezier(0.22, 1, 0.36, 1)",
                       zIndex: isActive ? 30 : 20 - Math.abs(offset),
@@ -462,13 +454,18 @@ const Projects = () => {
                               <span className="h-2.5 w-2.5 rounded-full bg-success/75" />
                             </div>
                             <span className="font-mono text-[10.5px] font-medium text-muted-foreground">
-                              {project.tag} · {project.year}
+                              {project.tag}
+                               {/* · {project.year} */}
                             </span>
                           </div>
                           <div className="aspect-[16/10] w-full overflow-hidden bg-surface">
                             <img
                               src={project.image}
-                              alt={`${project.title} preview`}
+                              alt={`${project.title} — ${project.tag} web application preview`}
+                              width={1878}
+                              height={937}
+                              loading={isActive ? "eager" : "lazy"}
+                              decoding="async"
                               className="h-full w-full object-cover object-top transition-transform duration-700 ease-out hover:scale-[1.03]"
                             />
                           </div>
@@ -480,9 +477,9 @@ const Projects = () => {
                         <div>
                           <div className="flex items-center justify-between font-mono text-[11px] font-semibold uppercase tracking-wider text-primary">
                             <span>{project.tag}</span>
-                            <span className="text-muted-foreground">
+                            {/* <span className="text-muted-foreground">
                               {project.year}
-                            </span>
+                            </span> */}
                           </div>
 
                           <h3 className="mt-2 text-[1.55rem] font-extrabold leading-tight tracking-tight text-foreground">
@@ -600,14 +597,18 @@ const Projects = () => {
                   <div className="aspect-[16/10] overflow-hidden border-b border-border bg-surface">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — ${project.tag} web application preview`}
+                      width={1878}
+                      height={937}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between font-mono text-[11px] font-semibold text-primary">
                       <span>{project.tag}</span>
-                      <span>{project.year}</span>
+                      {/* <span>{project.year}</span> */}
                     </div>
                     <h3 className="mt-2 text-[1.25rem] font-bold text-foreground">
                       {project.title}

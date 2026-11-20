@@ -28,6 +28,9 @@ const Hero = () => {
         <img
           src={heroImg}
           alt=""
+          width={1024}
+          height={572}
+          decoding="async"
           className="h-full w-full object-cover object-[18%_center] xl:object-[22%_center]"
           loading="eager"
           fetchPriority="high"
@@ -75,6 +78,10 @@ const Hero = () => {
                 <img
                   src={heroImg}
                   alt="Dipesh Deula at engineering workstation"
+                  width={1024}
+                  height={572}
+                  decoding="async"
+                  fetchPriority="high"
                   className="h-full w-full object-cover object-[24%_22%]"
                   loading="eager"
                 />

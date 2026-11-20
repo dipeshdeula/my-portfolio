@@ -48,6 +48,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header
       className={cn(
@@ -170,7 +179,7 @@ const Header = () => {
                   className={cn(
                     "rounded-md px-3 py-2.5 text-sm transition-colors",
                     isActive
-                      ? "font-semibold text-[#F97316]"
+                      ? "font-semibold text-primary"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                 >
@@ -183,7 +192,7 @@ const Header = () => {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-9 w-full items-center justify-center rounded-lg bg-[#F97316] px-4 text-sm font-semibold text-white"
+                className="inline-flex h-10 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover"
               >
                 Get in touch
               </a>

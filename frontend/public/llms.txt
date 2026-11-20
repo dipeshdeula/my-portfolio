@@ -1,0 +1,43 @@
+# Dipesh Deula — Full-Stack Software Engineer
+
+> Official portfolio of Dipesh Deula, a Full-Stack Software Engineer and Software Project Manager / Project Lead Developer based in Hetauda, Nepal (available for remote and onsite engineering roles worldwide).
+
+## Profile
+- **Name**: Dipesh Deula
+- **Role**: Full-Stack Software Engineer · Project Lead Developer
+- **Location**: Hetauda, Nepal (Remote Worldwide)
+- **Website**: https://www.deuladipesh.info.np/
+- **GitHub**: https://github.com/dipeshdeula
+- **LinkedIn**: https://www.linkedin.com/in/dipesh-deula-245608258/
+- **Email**: deulatech@gmail.com
+- **Status**: Open for full-time software engineering roles, project lead developer opportunities, and contract engagements.
+
+## Core Technical Stack
+- **Backend & APIs**: ASP.NET Core (.NET Core 8, Clean Architecture, MediatR, CQRS), Python Django / Django REST Framework, Java Spring Boot, FastAPI, RESTful APIs, GraphQL, tRPC, SignalR
+- **Frontend**: React.js, Next.js, TypeScript, Tailwind CSS, shadcn/ui, TanStack React Query, Redux Toolkit, React Native & Expo
+- **Databases & Caching**: PostgreSQL, MS SQL Server, MySQL, Redis, Supabase
+- **Cloud & DevOps**: AWS (EC2, S3), GCP, Docker, Nginx, GitHub Actions, GitLab Runner CI/CD, Vercel, Linux
+
+## Professional Experience
+1. **Freelance Full-Stack Developer — Bagmati Province, Nepal (G-HRMS)** (2026 – Present | Hetauda, Nepal)
+   - Developed G-HRMS, a government Human Resource Management System supporting employee, payroll, organizational, document, and administrative workflows.
+   - Built REST APIs with Django REST Framework and frontend modules with React, TypeScript, and React Query; integrated AWS S3 private storage and RBAC.
+2. **Software Project Manager | Full-Stack Developer — Seckout Solutions Pvt. Ltd.** (2025 – 08/2026 | Hetauda, Nepal)
+   - Led end-to-end product development, system architecture, and releases for Nepal's first rewards-driven checkout platform (1,000+ partner vendors).
+   - Stack: React, TypeScript, Spring Boot, MySQL, Docker, Nginx. Cut median page load by 62% and lifted checkout conversion by 18%.
+3. **Freelance Full-Stack Developer — Pars Pvt. Ltd. (InstantMart)** (04/2025 – Present | Hetauda-2, Nepal)
+   - Architected InstantMart enterprise e-commerce using .NET Core 8, Clean Architecture, MediatR, CQRS, Redis (60% performance gain), eSewa & Khalti payment gateways, React + Redux Toolkit, and GitLab Runner Docker CI/CD.
+4. **Software Engineer Intern — Truenary Solutions Pvt. Ltd.** (05/2025 – 08/2025 | Hetauda, Nepal)
+   - Contributed to a cross-platform web & mobile monorepo using Next.js, Expo, React Native, and Tamagui.
+5. **Backend Developer Intern — Kutumba Tech** (01/2025 – 05/2025 | Kathmandu, Nepal)
+   - Built Healthcare video consultation backend (Jitsi Meet API), ASP.NET Core OTT platform backend (Wasabi Cloud Storage + FFmpeg adaptive streaming), SignalR real-time chat, and Python Django Library Management System.
+
+## Featured Projects (8 Total)
+1. **Seckout Rewards Platform** — FinTech & Commerce platform (React.js, TypeScript, Spring Boot, MySQL)
+2. **Seckout Admin Console** — Internal operations, billing & RBAC console (React.js, TypeScript, shadcn/ui, TanStack Query)
+3. **G-HRMS (Government Human Resource Management System)** — Provincial government HR, payroll & document platform (Django REST, PostgreSQL, React, TypeScript, AWS S3)
+4. **Galla Laxmi Bhandar** — Accounting, Billing & Inventory Management System (ASP.NET Core, PostgreSQL, React, TypeScript, AWS)
+5. **Kina Now** — Multi-Vendor E-commerce Platform (ASP.NET Core, PostgreSQL, React, TypeScript, GCP)
+6. **NAVO A.I** — AI-Powered Teacher Copilot & Learning Platform (React, TypeScript, GCP, Supabase)
+7. **Library Management System** — Book circulation & member administration (React, TypeScript, Python/Django, PostgreSQL)
+8. **Student Result Management System** — Academic records, marks & grade platform (HTML5, CSS, JS, PHP)

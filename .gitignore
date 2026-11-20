@@ -24,3 +24,11 @@ dist-ssr
 *.sw?
 node_modules
 frontend/doc
+
+# Internal SEO audit & scratch markdown files
+seo/
+seo.md
+*seo*.md
+*.local.md
+NOTES.md
+TODO.md

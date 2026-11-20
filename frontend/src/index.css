@@ -154,8 +154,13 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 
   /* Warm Orange & White ambient mesh backdrop in Light Mode */
@@ -197,6 +202,15 @@
     text-wrap: pretty;
   }
 
+  /* Hide scrollbar for horizontal mobile touch strips */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Dotted architectural grid backdrop */
   .bg-grid {
     background-image:
@@ -235,21 +249,27 @@
     pointer-events: none;
   }
 
-  /* Hero entrance animations */
+  /* Hero entrance animations (LCP-safe: never hides H1 at opacity 0) */
   .hero-morph {
-    opacity: 0;
-    transform: translateY(18px);
-    animation: hero-morph 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+    transform: translateY(10px);
+    animation: hero-morph 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
-  .hero-morph-1 { animation-delay: 0.12s; }
-  .hero-morph-2 { animation-delay: 0.20s; }
-  .hero-morph-3 { animation-delay: 0.28s; }
-  .hero-morph-4 { animation-delay: 0.36s; }
+  .hero-morph-1 { animation-delay: 0.04s; }
+  .hero-morph-2 { animation-delay: 0.08s; }
+  .hero-morph-3 { animation-delay: 0.12s; }
+  .hero-morph-4 { animation-delay: 0.16s; }
 
   @keyframes hero-morph {
     to {
-      opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-morph,
+    .bg-grid-shine {
+      animation: none !important;
+      transform: none !important;
     }
   }
 

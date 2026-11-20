@@ -15,6 +15,9 @@ const Contact = () => {
             <img
               src={discussionImg}
               alt="Dipesh Deula collaborating on software engineering projects"
+              width={1537}
+              height={1023}
+              decoding="async"
               className="h-full w-full object-cover object-center"
               loading="lazy"
             />
@@ -53,7 +56,7 @@ const Contact = () => {
                 className="group inline-flex items-center gap-3 rounded-xl bg-primary px-6 py-3.5 text-[14.5px] font-semibold text-primary-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-primary-hover"
               >
                 <Mail className="h-4 w-4" />
-                hello@dipeshdeula.dev
+                deulatech@gmail.com
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 

@@ -1,0 +1,18 @@
+# Allow all search engines and AI search crawlers
+User-agent: *
+Allow: /
+
+# Explicitly allow major AI search & citation bots
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://www.deuladipesh.info.np/sitemap.xml
